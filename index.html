@@ -152,7 +152,7 @@
 
         .video-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             padding: 0 8%;
             max-width: 1200px;
@@ -165,12 +165,46 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .video-card iframe {
+        .video-thumbnail-box {
+            position: relative;
             width: 100%;
             height: 220px;
-            border: none;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-thumbnail-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: transform 0.2s;
+        }
+
+        .play-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .video-info {
@@ -178,14 +212,14 @@
         }
 
         .video-info h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 8px;
             color: var(--text-color);
         }
 
         .video-info p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 15px;
         }
 
@@ -284,23 +318,38 @@
         </div>
     </section>
 
-   <!-- Video Showcase Section -->
+    <!-- Video Showcase Section -->
     <section id="videos">
-        <h2 class="section-title">Featured AI Creations</h2>
+        <h2 class="section-title">Featured AI Video Creations</h2>
         <div class="video-container">
             
             <!-- Video 1: NAA DESAM NAA GARVAM -->
             <div class="video-card">
-                <div style="position: relative; width: 100%; height: 220px; background: #000; overflow: hidden;">
-                    <img src="https://img.youtube.com/vi/ZWWRUNSWVB4/maxresdefault.jpg" alt="NAA DESAM NAA GARVAM" style="width: 100%; height: 100%; object-fit: cover;">
-                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 0, 0, 0.9); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.6);">
-                        <i class="fas fa-play" style="margin-left: 4px;"></i>
+                <div class="video-thumbnail-box">
+                    <img src="https://img.youtube.com/vi/ZWWRUNSWVB4/hqdefault.jpg" alt="NAA DESAM NAA GARVAM">
+                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="play-overlay">
+                        <i class="fas fa-play" style="margin-left: 3px;"></i>
                     </a>
                 </div>
                 <div class="video-info">
                     <h3>NAA DESAM NAA GARVAM</h3>
                     <p>August 15 స్వాతంత్ర్య దినోత్సవం సందర్భంగా SLD AI Creations రూపొందించిన ప్రత్యేక AI దేశభక్తి వీడియో.</p>
-                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="btn-main" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; text-align: center; display: block;">Watch Full Video on YouTube</a>
+                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="btn-main" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; text-align: center; display: block;">Watch on YouTube</a>
+                </div>
+            </div>
+
+            <!-- Video 2: HAPPY INDEPENDENCE DAY Shorts -->
+            <div class="video-card">
+                <div class="video-thumbnail-box">
+                    <img src="https://img.youtube.com/vi/I46exOLLM1c/hqdefault.jpg" alt="HAPPY INDEPENDENCE DAY">
+                    <a href="https://www.youtube.com/shorts/I46exOLLM1c" target="_blank" class="play-overlay">
+                        <i class="fas fa-play" style="margin-left: 3px;"></i>
+                    </a>
+                </div>
+                <div class="video-info">
+                    <h3>HAPPY INDEPENDENCE DAY (AI Short)</h3>
+                    <p>స్వాతంత్ర్య దినోత్సవ ప్రత్యేక AI యానిమేషన్ & విజువల్స్ కాన్సెప్ట్ వీడియో.</p>
+                    <a href="https://www.youtube.com/shorts/I46exOLLM1c" target="_blank" class="btn-main" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; text-align: center; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short on YouTube</a>
                 </div>
             </div>
 
@@ -310,11 +359,14 @@
                     <i class="fas fa-video" style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 15px;"></i>
                     <h3>మీకు కూడా AI వీడియోలు కావాలా?</h3>
                     <p>సినిమా కాన్సెప్ట్స్, బిజినెస్ ప్రమోషన్స్ మరియు షార్ట్ వీడియోల కోసం మమ్మల్ని సంప్రదించండి.</p>
-                    <a href="https://wa.me/918464853033" target="_blank" class="btn-main" style="background: #25d366; padding: 8px 20px; font-size: 0.9rem;">
+                    <a href="https://wa.me/918464853033" target="_blank" class="btn-main" style="background: #25d366; padding: 10px 20px; font-size: 0.9rem;">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
             </div>
+
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
