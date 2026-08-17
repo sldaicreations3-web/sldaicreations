@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLD AI CREATIONS | Feel the Entertainment</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0d0f17;
+            --card-bg: #161b26;
+            --accent-cyan: #00d2ff;
+            --accent-purple: #9b51e0;
+            --text-color: #ffffff;
+            --text-muted: #a0aec0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(13, 15, 23, 0.9);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 70px 8% 50px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(155, 81, 224, 0.15), transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Social Quick Links Bar */
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--card-bg);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        .social-btn.yt:hover { background: #ff0000; }
+        .social-btn.ig:hover { background: #e1306c; }
+        .social-btn.fb:hover { background: #1877f2; }
+        .social-btn.wa:hover { background: #25d366; }
+
+        /* Video Showcase Section */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2rem;
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 0 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 220px;
+            border: none;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .video-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 8%;
+            background: var(--card-bg);
+            margin-top: 80px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 260px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item i {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #080a0f;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav>
+        <div class="logo">SLD AI CREATIONS</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#videos">AI Videos</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <h1>Welcome to <span>SLD AI CREATIONS</span></h1>
+        <p>Feel the Entertainment! సరికొత్త ఆర్టిఫిషియల్ ఇంటెలిజెన్స్ (AI) వీడియోలు, సినిమాటిక్ విజువల్స్ మరియు క్రియేటివ్ ప్రమోషన్స్.</p>
+        <a href="https://www.youtube.com/@SLDAICREATIONS" target="_blank" class="btn-main"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
+
+        <!-- Social Buttons -->
+        <div class="social-bar">
+            <a href="https://wa.me/918464853033" target="_blank" class="social-btn wa">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.youtube.com/@SLDAICREATIONS" target="_blank" class="social-btn yt">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://www.instagram.com/sldaicreations/" target="_blank" class="social-btn ig">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61592780653907" target="_blank" class="social-btn fb">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="mailto:sldaicreations3@gmail.com" class="social-btn">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+    </section>
+
+   <!-- Video Showcase Section -->
+    <section id="videos">
+        <h2 class="section-title">Featured AI Creations</h2>
+        <div class="video-container">
+            
+            <!-- Video 1: NAA DESAM NAA GARVAM -->
+            <div class="video-card">
+                <div style="position: relative; width: 100%; height: 220px; background: #000; overflow: hidden;">
+                    <img src="https://img.youtube.com/vi/ZWWRUNSWVB4/maxresdefault.jpg" alt="NAA DESAM NAA GARVAM" style="width: 100%; height: 100%; object-fit: cover;">
+                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 0, 0, 0.9); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.6);">
+                        <i class="fas fa-play" style="margin-left: 4px;"></i>
+                    </a>
+                </div>
+                <div class="video-info">
+                    <h3>NAA DESAM NAA GARVAM</h3>
+                    <p>August 15 స్వాతంత్ర్య దినోత్సవం సందర్భంగా SLD AI Creations రూపొందించిన ప్రత్యేక AI దేశభక్తి వీడియో.</p>
+                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="btn-main" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; text-align: center; display: block;">Watch Full Video on YouTube</a>
+                </div>
+            </div>
+
+            <!-- Promotion Card -->
+            <div class="video-card">
+                <div class="video-info" style="text-align: center; padding: 40px 20px;">
+                    <i class="fas fa-video" style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 15px;"></i>
+                    <h3>మీకు కూడా AI వీడియోలు కావాలా?</h3>
+                    <p>సినిమా కాన్సెప్ట్స్, బిజినెస్ ప్రమోషన్స్ మరియు షార్ట్ వీడియోల కోసం మమ్మల్ని సంప్రదించండి.</p>
+                    <a href="https://wa.me/918464853033" target="_blank" class="btn-main" style="background: #25d366; padding: 8px 20px; font-size: 0.9rem;">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 style="margin-bottom: 10px;">Contact SLD AI CREATIONS</h2>
+        <p style="color: var(--text-muted);">AI వీడియో ప్రాజెక్ట్స్ మరియు ప్రమోషన్స్ కోసం మమ్మల్ని సంప్రదించండి</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <h4>WhatsApp / Phone</h4>
+                <p><a href="https://wa.me/918464853033">+91 8464853033</a></p>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p><a href="mailto:sldaicreations3@gmail.com">sldaicreations3@gmail.com</a></p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-youtube"></i>
+                <h4>Official YouTube</h4>
+                <p><a href="https://www.youtube.com/@SLDAICREATIONS" target="_blank">@SLDAICREATIONS</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SLD AI CREATIONS — Feel the Entertainment. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
