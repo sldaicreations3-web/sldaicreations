@@ -16,7 +16,7 @@
             --accent-purple: #9b51e0;
             --text-color: #ffffff;
             --text-muted: #a0aec0;
-            --code-bg: #090c10;
+            --pdf-red: #ff4757;
         }
 
         * {
@@ -97,7 +97,7 @@
 
         .btn-main {
             display: inline-block;
-            padding: 10px 24px;
+            padding: 10px 20px;
             background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
             color: white;
             text-decoration: none;
@@ -105,11 +105,37 @@
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            font-size: 0.9rem;
         }
 
         .btn-main:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+        }
+
+        /* PDF Download Button Styling */
+        .btn-pdf {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(255, 71, 87, 0.15);
+            border: 1px solid var(--pdf-red);
+            color: #ff6b81;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-pdf:hover {
+            background: var(--pdf-red);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
         }
 
         /* Social Quick Links Bar */
@@ -213,6 +239,7 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            justify-content: space-between;
         }
 
         .video-info h3 {
@@ -224,55 +251,7 @@
         .video-info p {
             color: var(--text-muted);
             font-size: 0.88rem;
-            margin-bottom: 15px;
-        }
-
-        /* AI Prompt Box Styling */
-        .prompt-box {
-            background: var(--code-bg);
-            border: 1px solid rgba(0, 210, 255, 0.25);
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 15px;
-        }
-
-        .prompt-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.78rem;
-            color: var(--accent-cyan);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .copy-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .copy-btn:hover {
-            background: var(--accent-cyan);
-            color: #000;
-            border-color: var(--accent-cyan);
-        }
-
-        .prompt-text {
-            font-size: 0.82rem;
-            color: #cbd5e1;
-            line-height: 1.4;
-            font-family: monospace;
-            word-break: break-word;
-            max-height: 90px;
-            overflow-y: auto;
+            margin-bottom: 20px;
         }
 
         /* Contact Section */
@@ -339,7 +318,7 @@
         <div class="logo">SLD AI CREATIONS</div>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#videos">AI Videos & Prompts</a>
+            <a href="#videos">AI Videos</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -372,7 +351,7 @@
 
     <!-- Video Showcase Section -->
     <section id="videos">
-        <h2 class="section-title">AI Videos & Prompts</h2>
+        <h2 class="section-title">Featured AI Creations</h2>
         <div class="video-container">
             
             <!-- Video 1: NAA DESAM NAA GARVAM -->
@@ -384,19 +363,17 @@
                     </a>
                 </div>
                 <div class="video-info">
-                    <h3>NAA DESAM NAA GARVAM</h3>
-                    <p>August 15 స్వాతంత్ర్య దినోత్సవం సందర్భంగా SLD AI Creations రూపొందించిన ప్రత్యేక AI దేశభక్తి వీడియో.</p>
-                    
-                    <!-- AI Prompt Box -->
-                    <div class="prompt-box">
-                        <div class="prompt-header">
-                            <span><i class="fas fa-terminal"></i> AI Video Prompt</span>
-                            <button class="copy-btn" onclick="copyPrompt('prompt-1', this)"><i class="fas fa-copy"></i> Copy</button>
-                        </div>
-                        <div class="prompt-text" id="prompt-1">Cinematic slow motion shot of an Indian soldier standing on a mountain ridge at sunrise with the Indian national flag waving proudly, golden hour lighting, 8k resolution, highly detailed, photorealistic.</div>
+                    <div>
+                        <h3>NAA DESAM NAA GARVAM</h3>
+                        <p>August 15 స్వాతంత్ర్య దినోత్సవం సందర్భంగా రూపొందించిన ప్రత్యేక AI దేశభక్తి వీడియో.</p>
                     </div>
-
-                    <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="btn-main" style="width: 100%;">Watch on YouTube</a>
+                    <div>
+                        <!-- PDF Download Button -->
+                        <a href="YOUR_GOOGLE_DRIVE_PDF_LINK" target="_blank" class="btn-pdf">
+                            <i class="fas fa-file-pdf"></i> View / Download Prompts (PDF)
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="btn-main" style="width: 100%; display: block;">Watch on YouTube</a>
+                    </div>
                 </div>
             </div>
 
@@ -409,43 +386,25 @@
                     </a>
                 </div>
                 <div class="video-info">
-                    <h3>HAPPY INDEPENDENCE DAY (AI Short)</h3>
-                    <p>స్వాతంత్ర్య దినోత్సవ ప్రత్యేక AI యానిమేషన్ & విజువల్స్ కాన్సెప్ట్ వీడియో.</p>
-                    
-                    <!-- AI Prompt Box -->
-                    <div class="prompt-box">
-                        <div class="prompt-header">
-                            <span><i class="fas fa-terminal"></i> AI Video Prompt</span>
-                            <button class="copy-btn" onclick="copyPrompt('prompt-2', this)"><i class="fas fa-copy"></i> Copy</button>
-                        </div>
-                        <div class="prompt-text" id="prompt-2">Ultra realistic 4k vertical cinematic shot of joyful Indian children waving small tricolor flags, dynamic camera pan, dramatic lighting, celebratory patriotic atmosphere, hyper detailed.</div>
-                    </div>
-
-                    <a href="https://www.youtube.com/shorts/I46exOLLM1c" target="_blank" class="btn-main" style="width: 100%; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short on YouTube</a>
-                </div>
-            </div>
- <!-- Video 3: AMEZINGHUMAN BODY Shorts -->
- <div class="video-card">
-                <div class="video-thumbnail-box">
-                    <img src="https://img.youtube.com/vi/https://www.youtube.com/shorts/ZwhA1fd7kFghttps://www.youtube.com/shorts/ZwhA1fd7kFg/hqdefault.jpg" alt="Video Title">
-                    <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/ZwhA1fd7kFg" target="_blank" class="play-overlay">
-                        <i class="fas fa-play" style="margin-left: 3px;"></i>
-                    </a>
-                </div>
-                <div class="video-info">
                     <div>
-                        <h3>AMAZING HUMAN BODY(AI Short)</h3>
-                        <p>మీ శరీరంలో మీకు తెలియని రహస్యాలు.</p>
+                        <h3>HAPPY INDEPENDENCE DAY (AI Short)</h3>
+                        <p>స్వాతంత్ర్య దినోత్సవ ప్రత్యేక AI యానిమేషన్ & విజువల్స్ షార్ట్ వీడియో.</p>
                     </div>
                     <div>
-                        
-                        <a href="మీ_GOOGLE_DRIVE_PDF_LINK" target="_blank" class="btn-pdf">
+                        <!-- PDF Download Button -->
+                        <a href="YOUR_GOOGLE_DRIVE_PDF_LINK" target="_blank" class="btn-pdf">
                             <i class="fas fa-file-pdf"></i> View / Download Prompts (PDF)
                         </a>
-                        <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/ZwhA1fd7kFg" target="_blank" class="btn-main" style="width: 100%; display: block;">Watch on YouTube</a>
+                        <a href="https://www.youtube.com/shorts/I46exOLLM1c" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short on YouTube</a>
                     </div>
-              </div>
+                </div>
+            </div>
+
+            <!-- భవిష్యత్తులో వచ్చే 3వ, 4వ కొత్త వీడియోలను ఇక్కడ పైన ఇచ్చిన కార్డ్ కోడ్‌లాగా చేర్చవచ్చు -->
+
+        </div>
     </section>
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <h2 style="margin-bottom: 10px;">Contact SLD AI CREATIONS</h2>
@@ -476,24 +435,6 @@
     <footer>
         <p>© 2026 SLD AI CREATIONS — Feel the Entertainment. All Rights Reserved.</p>
     </footer>
-
-    <!-- Copy Prompt Script -->
-    <script>
-        function copyPrompt(elementId, btnElement) {
-            const textToCopy = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                const originalText = btnElement.innerHTML;
-                btnElement.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                btnElement.style.background = '#25d366';
-                btnElement.style.color = '#fff';
-                setTimeout(() => {
-                    btnElement.innerHTML = originalText;
-                    btnElement.style.background = '';
-                    btnElement.style.color = '';
-                }, 2000);
-            });
-        }
-    </script>
 
 </body>
 </html>
