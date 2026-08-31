@@ -37,7 +37,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 20px 6%;
             background: rgba(13, 15, 23, 0.9);
             position: sticky;
             top: 0;
@@ -70,7 +70,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 70px 8% 50px;
+            padding: 60px 6% 40px;
             text-align: center;
             background: radial-gradient(circle at top, rgba(155, 81, 224, 0.15), transparent 70%);
         }
@@ -96,7 +96,7 @@
 
         .btn-main {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 10px 18px;
             background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
             color: white;
             text-decoration: none;
@@ -104,7 +104,7 @@
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
         }
 
         .btn-main:hover {
@@ -117,7 +117,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
@@ -145,19 +145,19 @@
         .social-btn.fb:hover { background: #1877f2; }
         .social-btn.wa:hover { background: #25d366; }
 
-        /* Video Showcase Section */
+        /* Video Showcase Section (4 Columns) */
         .section-title {
             text-align: center;
-            margin: 50px 0 30px;
+            margin: 40px 0 25px;
             font-size: 2rem;
         }
 
         .video-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 0 8%;
-            max-width: 1200px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 4%;
+            max-width: 1440px;
             margin: 0 auto;
         }
 
@@ -174,7 +174,7 @@
         .video-thumbnail-box {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 180px;
             background: #000;
             overflow: hidden;
         }
@@ -192,13 +192,13 @@
             transform: translate(-50%, -50%);
             background: rgba(255, 0, 0, 0.9);
             color: white;
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: 18px;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
             transition: transform 0.2s;
@@ -209,7 +209,7 @@
         }
 
         .video-info {
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -217,22 +217,45 @@
         }
 
         .video-info h3 {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
+            font-size: 1rem;
+            margin-bottom: 6px;
             color: var(--text-color);
+            line-height: 1.3;
         }
 
         .video-info p {
             color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-bottom: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1200px) {
+            .video-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .video-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 520px) {
+            .video-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Contact Section */
         .contact-section {
-            padding: 60px 8%;
+            padding: 50px 6%;
             background: var(--card-bg);
-            margin-top: 80px;
+            margin-top: 60px;
             border-radius: 20px 20px 0 0;
             text-align: center;
         }
@@ -241,20 +264,20 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 25px;
         }
 
         .contact-item {
             background: rgba(255, 255, 255, 0.03);
             padding: 20px;
             border-radius: 12px;
-            min-width: 260px;
+            min-width: 240px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-item i {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--accent-cyan);
             margin-bottom: 10px;
         }
@@ -277,11 +300,6 @@
             color: var(--text-muted);
             font-size: 0.85rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -328,7 +346,7 @@
         <h2 class="section-title">Featured AI Creations</h2>
         <div class="video-container">
 
-            <!-- Video 1: SLD AI Tools Platform -->
+            <!-- Video 1 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/eDVS9jvn18A/hqdefault.jpg" alt="SLD AI Tools">
@@ -342,12 +360,12 @@
                         <p>50+ కేటగిరీలలో 500+ AI టూల్స్ మరియు తెలుగు AI కోచింగ్ గైడ్.</p>
                     </div>
                     <div>
-                        <a href="https://www.youtube.com/shorts/eDVS9jvn18A" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #9b51e0);">Watch Short on YouTube</a>
+                        <a href="https://www.youtube.com/shorts/eDVS9jvn18A" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #9b51e0);">Watch Short</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Video 2: NINNU MARCHINA GUNDE MARAVALE -->
+            <!-- Video 2 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/NpgeBDLv1D4/hqdefault.jpg" alt="NINNU MARCHINA GUNDE MARAVALE">
@@ -358,7 +376,7 @@
                 <div class="video-info">
                     <div>
                         <h3>NINNU MARCHINA GUNDE MARAVALE</h3>
-                        <p>గుండెను హత్తుకునే భావోద్వేగమైన ప్రేమ కథ మరియు మనసుకు తాకే AI సంగీత దృశ్య రూపం.</p>
+                        <p>గుండెను హత్తుకునే భావోద్వేగమైన ప్రేమ కథ మరియు AI సంగీత దృశ్య రూపం.</p>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/watch?v=NpgeBDLv1D4" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #9b51e0);">Watch on YouTube</a>
@@ -366,7 +384,7 @@
                 </div>
             </div>
 
-            <!-- Video 3: NANNU ALA CHUSTE NUVVU SHOK AVUTAV -->
+            <!-- Video 3 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/pMJ1Ok1zfJM/hqdefault.jpg" alt="NANNU ALA CHUSTE NUVVU SHOK AVUTAV">
@@ -377,15 +395,15 @@
                 <div class="video-info">
                     <div>
                         <h3>Cute Attitude Reel</h3>
-                        <p>నన్ను అలా చూస్తే షాక్ అవుతావ్! ఆకట్టుకునే AI క్యారెక్టర్ మరియు ఆటిట్యూడ్ డైలాగ్ రీల్.</p>
+                        <p>నన్ను అలా చూస్తే షాక్ అవుతావ్! ఆకట్టుకునే AI క్యారెక్టర్ డైలాగ్ రీల్.</p>
                     </div>
                     <div>
-                        <a href="https://www.youtube.com/shorts/pMJ1Ok1zfJM" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short on YouTube</a>
+                        <a href="https://www.youtube.com/shorts/pMJ1Ok1zfJM" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Video 4: SIVA PURANAM EPISODE 1 -->
+            <!-- Video 4 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/XdMcuuovjD4/hqdefault.jpg" alt="SIVA PURANAM EPISODE 1">
@@ -395,8 +413,8 @@
                 </div>
                 <div class="video-info">
                     <div>
-                        <h3>SIVA PURANAM EPISODE 1 (భాగం 1)</h3>
-                        <p>సృష్టి ఆవిర్భావం, అనంతమైన జ్యోతిస్తంభం మరియు పరమశివ తత్వం యొక్క దివ్యమైన AI దృశ్య రూపం.</p>
+                        <h3>SIVA PURANAM EPISODE 1</h3>
+                        <p>సృష్టి ఆవిర్భావం మరియు పరమశివ తత్వం యొక్క దివ్యమైన AI దృశ్య రూపం.</p>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/watch?v=XdMcuuovjD4" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #3a7bd5);">Watch on YouTube</a>
@@ -404,7 +422,7 @@
                 </div>
             </div>
 
-            <!-- Video 5: SLD AI CREATIONS Promo Video -->
+            <!-- Video 5 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/JfcTYZ3309g/hqdefault.jpg" alt="SLD AI CREATIONS ADD VIDEO">
@@ -415,7 +433,7 @@
                 <div class="video-info">
                     <div>
                         <h3>SLD AI CREATIONS Promo Video</h3>
-                        <p>మీ ఆలోచనలకు అద్భుతమైన వీడియో రూపం! మీ అవసరాలకు తగ్గట్టుగా AI వీడియోలను రూపొందించుకోండి.</p>
+                        <p>మీ ఆలోచనలకు అద్భుతమైన వీడియో రూపం! ప్రత్యేక AI ప్రమోషనల్ వీడియో.</p>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/watch?v=JfcTYZ3309g" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #9b51e0);">Watch on YouTube</a>
@@ -423,7 +441,7 @@
                 </div>
             </div>
 
-            <!-- Video 6: SILPI CHETILO PUTTINA GANAPATI -->
+            <!-- Video 6 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/32K_Lkg0-OY/hqdefault.jpg" alt="SILPI CHETILO PUTTINA GANAPATI">
@@ -433,8 +451,8 @@
                 </div>
                 <div class="video-info">
                     <div>
-                        <h3>SILPI CHETILO PUTTINA GANAPATI</h3>
-                        <p>మట్టి నుండి మహిమ వరకు... శిల్పి చేతిలో వినాయకుడి ప్రతిమ ప్రాణం పోసుకునే అద్భుతమైన AI టైమ్‌లాప్స్ వీడియో.</p>
+                        <h3>SILPI CHETILO GANAPATI</h3>
+                        <p>శిల్పి చేతిలో వినాయకుడి ప్రతిమ ప్రాణం పోసుకునే అద్భుత AI టైమ్‌లాప్స్.</p>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/watch?v=32K_Lkg0-OY" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #f39c12, #d35400);">Watch on YouTube</a>
@@ -442,7 +460,64 @@
                 </div>
             </div>
 
-            <!-- Video 7: NAA DESAM NAA GARVAM -->
+            <!-- Video 7 -->
+            <div class="video-card">
+                <div class="video-thumbnail-box">
+                    <img src="https://img.youtube.com/vi/cbBcDNIv-EQ/hqdefault.jpg" alt="SLD AI Creation Short">
+                    <a href="https://www.youtube.com/shorts/cbBcDNIv-EQ" target="_blank" class="play-overlay">
+                        <i class="fas fa-play" style="margin-left: 3px;"></i>
+                    </a>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <h3>AI Special Short</h3>
+                        <p>SLD AI Creations సరికొత్త ఆకర్షణీయమైన AI విజువల్ షార్ట్ వీడియో.</p>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/shorts/cbBcDNIv-EQ" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="video-card">
+                <div class="video-thumbnail-box">
+                    <img src="https://img.youtube.com/vi/BPrHa-Q9Lvs/hqdefault.jpg" alt="Cinematic AI Story">
+                    <a href="https://www.youtube.com/watch?v=BPrHa-Q9Lvs" target="_blank" class="play-overlay">
+                        <i class="fas fa-play" style="margin-left: 3px;"></i>
+                    </a>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <h3>Cinematic AI Story</h3>
+                        <p>అద్భుతమైన యానిమేషన్ మరియు AI విజువల్ ఎఫెక్ట్స్‌తో కూడిన వీడియో.</p>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/watch?v=BPrHa-Q9Lvs" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #3a7bd5);">Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 9 -->
+            <div class="video-card">
+                <div class="video-thumbnail-box">
+                    <img src="https://img.youtube.com/vi/soOOBvi9heg/hqdefault.jpg" alt="AI Visual Entertainment">
+                    <a href="https://www.youtube.com/watch?v=soOOBvi9heg" target="_blank" class="play-overlay">
+                        <i class="fas fa-play" style="margin-left: 3px;"></i>
+                    </a>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <h3>AI Visual Entertainment</h3>
+                        <p>SLD AI Creations రూపొందించిన ఆర్టిఫిషియల్ ఇంటెలిజెన్స్ కాన్సెప్ట్ వీడియో.</p>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/watch?v=soOOBvi9heg" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #9b51e0, #e1306c);">Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 10 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/ZWWRUNSWVB4/hqdefault.jpg" alt="NAA DESAM NAA GARVAM">
@@ -453,7 +528,7 @@
                 <div class="video-info">
                     <div>
                         <h3>NAA DESAM NAA GARVAM</h3>
-                        <p>August 15 స్వాతంత్ర్య దినోత్సవం సందర్భంగా రూపొందించిన ప్రత్యేక AI దేశభక్తి వీడియో.</p>
+                        <p>August 15 స్వాతంత్ర్య దినోత్సవ ప్రత్యేక AI దేశభక్తి వీడియో.</p>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/watch?v=ZWWRUNSWVB4" target="_blank" class="btn-main" style="width: 100%; display: block;">Watch on YouTube</a>
@@ -461,7 +536,7 @@
                 </div>
             </div>
 
-            <!-- Video 8: HAPPY INDEPENDENCE DAY Shorts -->
+            <!-- Video 11 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/I46exOLLM1c/hqdefault.jpg" alt="HAPPY INDEPENDENCE DAY">
@@ -471,16 +546,16 @@
                 </div>
                 <div class="video-info">
                     <div>
-                        <h3>HAPPY INDEPENDENCE DAY (AI Short)</h3>
+                        <h3>HAPPY INDEPENDENCE DAY</h3>
                         <p>స్వాతంత్ర్య దినోత్సవ ప్రత్యేక AI యానిమేషన్ & విజువల్స్ షార్ట్ వీడియో.</p>
                     </div>
                     <div>
-                        <a href="https://www.youtube.com/shorts/I46exOLLM1c" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short on YouTube</a>
+                        <a href="https://www.youtube.com/shorts/I46exOLLM1c" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #e1306c, #fd1d1d);">Watch Short</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Video 9: HUMAN BODY FACTS -->
+            <!-- Video 12 -->
             <div class="video-card">
                 <div class="video-thumbnail-box">
                     <img src="https://img.youtube.com/vi/ZwhA1fd7kFg/hqdefault.jpg" alt="HUMAN BODY FACTS">
@@ -490,11 +565,11 @@
                 </div>
                 <div class="video-info">
                     <div>
-                        <h3>HUMAN BODY FACTS (AI Visuals)</h3>
+                        <h3>HUMAN BODY FACTS</h3>
                         <p>మానవ శరీరం గురించిన ఆసక్తికరమైన సైన్స్ వాస్తవాలు మరియు AI విజువల్స్.</p>
                     </div>
                     <div>
-                        <a href="https://www.youtube.com/shorts/ZwhA1fd7kFg" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #9b51e0);">Watch Short on YouTube</a>
+                        <a href="https://www.youtube.com/shorts/ZwhA1fd7kFg" target="_blank" class="btn-main" style="width: 100%; display: block; background: linear-gradient(45deg, #00d2ff, #9b51e0);">Watch Short</a>
                     </div>
                 </div>
             </div>
